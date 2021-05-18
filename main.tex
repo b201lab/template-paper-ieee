@@ -235,23 +235,6 @@
 \input{konten/4-lorem-ipsum.tex}
 \input{konten/5-kesimpulan.tex}
 
-% use section* for acknowledgment
-\ifCLASSOPTIONcompsoc
-  % The Computer Society usually uses the plural form
-  \section*{Acknowledgments}
-\else
-  % regular IEEE prefers the singular form
-  \section*{Acknowledgment}
-\fi
-
-This work received support from the \href{https://latextemplates.github.io/IEEE/}{IEEE LaTeX Template}.
-
-
-In the bibliography, use \texttt{\textbackslash textsuperscript} for ``st'', ``nd'', \ldots:
-E.g., \enquote{The 2\textsuperscript{nd} conference on examples}.
-When you use \href{https://www.jabref.org}{JabRef}, you can use the clean up command to achieve that.
-See \url{https://help.jabref.org/en/CleanupEntries} for an overview of the cleanup functionality.
-
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page
 % adjust value as needed - may need to be readjusted if
@@ -266,9 +249,6 @@ See \url{https://help.jabref.org/en/CleanupEntries} for an overview of the clean
 \bibliographystyle{IEEEtranN} % IEEEtranN is the natbib compatible bst file
 % argument is your BibTeX string definitions and bibliography database(s)
 \bibliography{pustaka/pustaka.bib}
-
-\ \\ % empty line after bibliogpraphy and that statement
-All links were followed on April 18, 2018.
 
 \balance
 
