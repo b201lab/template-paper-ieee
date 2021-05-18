@@ -1,60 +1,45 @@
-% This template has been tested with IEEEtran of 2015.
-
-% !TeX spellcheck = en-US
-% !TeX encoding = utf8
-% !TeX program = pdflatex
-% !BIB program = bibtex
-% -*- coding:utf-8 mod:LaTeX -*-
-
-%cmap has to be loaded before any font package (such as newtxmath)
+% Harus dimuat terlebih dahulu, digunakan agar file PDF memiliki format karakter yang benar.
+% Untuk informasi lebih lanjut, lihat https://ctan.org/pkg/cmap.
 \RequirePackage{cmap}
 
-% DO NOT DOWNLOAD IEEEtran.cls - Use the one of your LaTeX distribution
+% Format dokumen sebagai paper konferensi menggunakan aturan IEEEtran terbaru (v1.8b).
+% Untuk informasi lebih lanjut, lihat http://www.michaelshell.org/tex/ieeetran/
 \documentclass[conference]{IEEEtran}[2015/08/26]
 
-% Balance the last page
-% The pbalance package (see https://ctan.org/pkg/pbalance) "just works" (in contrast to balance.sty or other solutions)
+% Digunakan untuk menyeimbangkan bagian akhir dokumen dengan dua kolom.
 \usepackage{balance}
 
-% use nicer font for code
+% Digunakan untuk menampilkan font dengan style yang lebih baik.
 \usepackage[zerostyle=b,scaled=.75]{newtxtt}
 
-% for demonstration purposes
+% Digunakan untuk tujuan demonstrasi.
 \usepackage{mwe}
 
+% Format encoding font dan input menjadi 8-bit UTF-8.
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc} %support umlauts in the input
+\usepackage[utf8]{inputenc}
 
+% Digunakan untuk memasukkan gambar pada dokumen.
 \usepackage{graphicx}
 
-%Set English as language and allow to write hyphenated"=words
+% Format bahasa menjadi bahasa german dan inggris.
 \usepackage[ngerman,main=english]{babel}
 %Hint by http://tex.stackexchange.com/a/321066/9075 -> enable "= as dashes
 \addto\extrasenglish{\languageshorthands{ngerman}\useshorthands{"}}
 
-% backticks (`) are rendered as such in verbatim environment. See https://tex.stackexchange.com/a/341057/9075 for details.
+% Digunakan agar backticks (`) dapat dirender pada PDF.
+% Untuk informasi lebih lanjut, lihat https://tex.stackexchange.com/a/341057/9075.
 \usepackage{upquote}
 
-%extended enumerate, such as \begin{compactenum}
+% Digunakan untuk membuat list di dalam paragraf.
 \usepackage{paralist}
 
-%for easy quotations: \enquote{text}
+% Digunakan untuk mempermudah pembuatan kutipan menggunakan \enquote{text}
 \usepackage{csquotes}
 
-%enable margin kerning
-\RequirePackage{iftex}
-\ifPDFTeX
-  \RequirePackage[%
-    final,%
-    expansion=alltext,%
-    protrusion=alltext-nott]{microtype}%
-\else
-  \RequirePackage[%
-    final,%
-    protrusion=alltext-nott]{microtype}%
-\fi%
-% \texttt{test -- test} keeps the "--" as "--" (and does not convert it to an en dash)
-\DisableLigatures{encoding = T1, family = tt* }
+% Digunakan untuk memperbaiki tipografi seperti font kerning.
+% Untuk informasi lebih lanjut, lihat https://ctan.org/pkg/microtype.
+\RequirePackage[final,expansion=alltext,protrusion=alltext-nott]{microtype}
 
 %tweak \url{...}
 \usepackage{url}
