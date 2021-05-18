@@ -1,108 +1,59 @@
-
+% Ubah judul dan label berikut sesuai dengan yang diinginkan
 \section{Desain dan Implementasi Sistem}
 \label{sec:desainimplementasi}
 
-\Cref{L1,L2} show listings typeset using the \texttt{lstlisting} environment.
+% Ubah paragraf-paragraf pada bagian ini sesuai dengan yang diinginkan
 
-\begin{lstlisting}[
-  % one can adjust spacing here if required
-  % aboveskip=2.5\baselineskip,
-  % belowskip=-.8\baselineskip,
-  caption={Example Java Listing},
-  label=L1,
-  language=Java,
-  float]
-public class Hello {
-    public static void main (String[] args) {
-        System.out.println("Hello World!");
-    }
-}
-\end{lstlisting}
+Pada cetak biru yang tertera pada Gambar \ref{fig:cetakbiru}. \lipsum[8]
 
-\begin{lstlisting}[
-  % one can adjust spacing here if required
-  % aboveskip=2.5\baselineskip,
-  % belowskip=-.8\baselineskip,
-  caption={Example XML Listing},
-  label=L2,
-  language=XML,
-  float]
-<example attr="demo">
-  text content
-</example>
-\end{lstlisting}
-
-\begin{figure}
-  \includegraphics[width=.5\textwidth]{example-grid-100x100bp}
-  \caption{Simple Figure. \cite[based on][]{mwe}}
-  \label{fig:simple}
+% Contoh input gambar pada kolom
+\begin{figure} [ht]
+  \centering
+  % Ubah sesuai dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[width=0.4\textwidth]{gambar/cetakbiru.jpg}
+  % Ubah sesuai dengan keterangan gambar yang diinginkan
+  \caption{Cetak biru roket yang akan diuji coba. \cite{cetakbiruspacex}}
+  \label{fig:cetakbiru}
 \end{figure}
 
-\begin{figure*}
-  \centering
-  \includegraphics[width=.6\textwidth]{example-image-16x9}
-  \caption{16x9 Figure}
-  \label{fig:16x9}
-\end{figure*}
+\lipsum[9-10]
 
-\begin{figure*}[!b]
-  \centering
-  \subfloat[Case I]{\includegraphics[width=.4\textwidth]{example-image-a}%
-    \label{fig_first_case}}
-  \hfil
-  \subfloat[Case II]{\includegraphics[width=.4\textwidth]{example-image-b}%
-    \label{fig_second_case}}
-  \caption{Simulation results for the network.}
-  \label{fig_sim}
-  % Note that often IEEE papers with subfigures do not employ subfigure
-  % captions (using the optional argument to \subfloat[]), but instead will
-  % reference/describe all of them (a), (b), etc., within the main caption.
-  % Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
-  % labels, the optional argument to \subfloat must be present. If a
-  % subcaption is not desired, just leave its contents blank,
-  % e.g., \subfloat[].
-\end{figure*}
-
+% Contoh pembuatan tabel
 \begin{table}
-  \caption{Simple Table}
-  \label{tab:simple}
+  \caption{Contoh tabel sederhana}
+  \label{tab:tabelsederhana}
   \centering
-  \begin{tabular}{ll}
+  \begin{tabular}{lll}
     \toprule
-    Heading1 & Heading2 \\
+    Heading1 & Heading2 & Heading3  \\
     \midrule
-    One      & Two      \\
-    Thee     & Four     \\
+    One      & Two      & Three     \\
+    Four     & Five     & Six       \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-cref Demonstration: Cref at beginning of sentence, cref in all other cases.
+% Contoh pembuatan potongan kode
+\begin{lstlisting}[
+  language=C++,
+  caption={Program halo dunia.},
+  label={lst:halodunia}
+]
+#include <iostream>
 
-\Cref{fig:simple} shows a simple fact, although \cref{fig:simple} could also show something else.
-\Cref{fig:16x9} shows an 16x9 image spanning two columns.
-\Cref{fig_first_case} is the first subfloat, whereas \Cref{fig_second_case} is the second one.
+int main() {
+    std::cout << "Halo Dunia!";
+    return 0;
+}
+\end{lstlisting}
 
-\Cref{tab:simple} shows a simple fact, although \cref{tab:simple} could also show something else.
+\lipsum[11-12]
 
-\Cref{sec:latarbelakang} shows a simple fact, although \cref{sec:latarbelakang} could also show something else.
+% Contoh pembuatan daftar
+\begin{enumerate}
+  \item \lipsum[13][1-4]
+  \item \lipsum[13][5-8]
+  \item \lipsum[13][9-12]
+\end{enumerate}
 
-Brackets work as designed:
-<test>
-One can also input backquotes in verbatim text: \verb|`test`|.
-
-The symbol for powerset is now correct: $\powerset$ and not a Weierstrass p ($\wp$).
-
-\begin{inparaenum}
-  \item All these items...
-  \item ...appear in one line
-  \item This is enabled by the paralist package.
-\end{inparaenum}
-
-``something in quotes'' using plain tex or use ``the enquote command''.
-
-You can now write words containing hyphens which are hyphenated (application"=specific) at other places.
-This is enabled by an additional configuration of the babel package.
-In case you write ``application-specific'', then the word will only be hyphenated at the dash.
-
-\lipsum[1-4]
+\lipsum[14-15]
