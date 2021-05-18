@@ -1,0 +1,60 @@
+% Ubah judul dan label berikut sesuai dengan yang diinginkan.
+\section{Desain dan Implementasi Sistem}
+\label{sec:desainimplementasi}
+
+% Ubah paragraf-paragraf pada bagian ini sesuai dengan yang diinginkan.
+
+Pada cetak biru yang tertera pada Gambar \ref{fig:cetakbiru}. \lipsum[8]
+
+% Contoh input gambar pada kolom.
+\begin{figure} [ht]
+  \centering
+  % Ubah sesuai dengan nama file gambar dan ukuran yang akan digunakan.
+  \includegraphics[width=0.4\textwidth]{gambar/cetakbiru.jpg}
+
+  % Ubah sesuai dengan keterangan gambar yang diinginkan.
+  \caption{Cetak biru roket yang akan diuji coba. \cite{cetakbiruspacex}}
+  \label{fig:cetakbiru}
+\end{figure}
+
+\lipsum[9-11]
+
+% Contoh pembuatan tabel.
+\begin{table}
+  \caption{Contoh tabel sederhana}
+  \label{tab:tabelsederhana}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    Heading1 & Heading2 & Heading3  \\
+    \midrule
+    One      & Two      & Three     \\
+    Four     & Five     & Six       \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% Contoh pembuatan potongan kode.
+\begin{lstlisting}[
+  language=C++,
+  caption={Program halo dunia.},
+  label={lst:halodunia}
+]
+#include <iostream>
+
+int main() {
+    std::cout << "Halo Dunia!";
+    return 0;
+}
+\end{lstlisting}
+
+\lipsum[12]
+
+% Contoh pembuatan daftar.
+\begin{enumerate}
+  \item \lipsum[13][1-4]
+  \item \lipsum[13][5-8]
+  \item \lipsum[13][9-12]
+\end{enumerate}
+
+\lipsum[14-15]

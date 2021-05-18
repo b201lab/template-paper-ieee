@@ -1,0 +1,103 @@
+% Harus dimuat terlebih dahulu, digunakan agar file PDF memiliki format karakter yang benar.
+% Untuk informasi lebih lanjut, lihat https://ctan.org/pkg/cmap.
+\RequirePackage{cmap}
+
+% Format dokumen sebagai paper konferensi menggunakan aturan IEEEtran terbaru (v1.8b).
+% Untuk informasi lebih lanjut, lihat http://www.michaelshell.org/tex/ieeetran/.
+\documentclass[conference]{IEEEtran}[2015/08/26]
+
+% Format encoding font dan input menjadi 8-bit UTF-8.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Format bahasa menjadi bahasa german dan inggris.
+\usepackage[indonesian]{babel}
+
+% Digunakan untuk tujuan demonstrasi.
+\usepackage{mwe}
+
+% Digunakan untuk menampilkan font dengan style yang lebih baik.
+\usepackage[zerostyle=b,scaled=.75]{newtxtt}
+
+% Digunakan untuk menampilkan tabel dengan style yang lebih baik.
+\usepackage{booktabs}
+
+% Digunakan untuk menampilkan gambar pada dokumen.
+\usepackage{graphicx}
+
+% Digunakan untuk menampilkan potongan kode.
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fixed,
+  basewidth=.5em,
+  xleftmargin=0.5cm,
+  captionpos=b
+}
+
+% Digunakan agar backticks (`) dapat dirender pada PDF.
+% Untuk informasi lebih lanjut, lihat https://tex.stackexchange.com/a/341057/9075.
+\usepackage{upquote}
+
+% Digunakan untuk menyeimbangkan bagian akhir dokumen dengan dua kolom.
+\usepackage{balance}
+
+% Digunakan untuk menampilkan pustaka.
+\usepackage[square,comma,numbers,sort&compress]{natbib}
+
+% Mengubah format ukuran teks pada natbib.
+\renewcommand{\bibfont}{\normalfont\footnotesize}
+
+% Menambah nama penulis ketika menggunakan perintah \citet.
+% Untuk informasi lebih lanjut, lihat https://tex.stackexchange.com/a/76075/9075.
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\NAT@test}{\else \NAT@nm}{\else \NAT@hyper@{\NAT@nm}}{}{}
+\makeatother
+
+% Digunakan untuk menambah hyperlink pada referensi.
+\usepackage{hyperref}
+
+% Menonaktifkan warna dan bookmark pada hyperref.
+\hypersetup{hidelinks,
+  colorlinks=true,
+  allcolors=black,
+  pdfstartview=Fit,
+  breaklinks=true
+}
+
+% Digunakan untuk membenarkan hyperref pada gambar.
+\usepackage[all]{hypcap}
+
+% Digunakan untuk menampilkan beberapa gambar
+\usepackage[caption=false,font=footnotesize]{subfig}
+
+\usepackage{stfloats}
+
+% Tambahkan format tanda hubung yang benar di sini
+\hyphenation{
+  ro-ket
+  me-ngem-bang-kan
+  per-hi-tu-ngan
+}
+
+\begin{document}
+
+  \input{deskripsi/judul.tex}
+  \input{deskripsi/abstrak.tex}
+
+  % Ubah bagian berikut sesuai dengan konten-konten yang akan dimasukkan pada dokumen
+  \input{konten/1-latar-belakang.tex}
+  \input{konten/2-penelitian-terkait.tex}
+  \input{konten/3-desain-implementasi.tex}
+  \input{konten/4-lorem-ipsum.tex}
+  \input{konten/5-kesimpulan.tex}
+
+  % Menampilkan daftar pustaka dengan format IEEE
+  \bibliographystyle{IEEEtranN}
+  \bibliography{pustaka/pustaka.bib}
+
+  % Menyeimbangkan bagian akhir di kedua kolom
+  \balance
+
+\end{document}
