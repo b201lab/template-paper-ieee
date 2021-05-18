@@ -3,176 +3,83 @@
 \RequirePackage{cmap}
 
 % Format dokumen sebagai paper konferensi menggunakan aturan IEEEtran terbaru (v1.8b).
-% Untuk informasi lebih lanjut, lihat http://www.michaelshell.org/tex/ieeetran/
+% Untuk informasi lebih lanjut, lihat http://www.michaelshell.org/tex/ieeetran/.
 \documentclass[conference]{IEEEtran}[2015/08/26]
-
-% Digunakan untuk menyeimbangkan bagian akhir dokumen dengan dua kolom.
-\usepackage{balance}
-
-% Digunakan untuk menampilkan font dengan style yang lebih baik.
-\usepackage[zerostyle=b,scaled=.75]{newtxtt}
-
-% Digunakan untuk tujuan demonstrasi.
-\usepackage{mwe}
 
 % Format encoding font dan input menjadi 8-bit UTF-8.
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-% Digunakan untuk memasukkan gambar pada dokumen.
-\usepackage{graphicx}
-
 % Format bahasa menjadi bahasa german dan inggris.
 \usepackage[indonesian]{babel}
+
+% Digunakan untuk tujuan demonstrasi.
+\usepackage{mwe}
+
+% Digunakan untuk menampilkan font dengan style yang lebih baik.
+\usepackage[zerostyle=b,scaled=.75]{newtxtt}
+
+% Digunakan untuk menampilkan tabel dengan style yang lebih baik.
+\usepackage{booktabs}
+
+% Digunakan untuk menampilkan gambar pada dokumen.
+\usepackage{graphicx}
+
+% Digunakan untuk menampilkan potongan kode.
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fixed,
+  basewidth=.5em,
+  xleftmargin=0.5cm,
+  captionpos=b
+}
 
 % Digunakan agar backticks (`) dapat dirender pada PDF.
 % Untuk informasi lebih lanjut, lihat https://tex.stackexchange.com/a/341057/9075.
 \usepackage{upquote}
 
-% Digunakan untuk membuat list di dalam paragraf.
-\usepackage{paralist}
+% Digunakan untuk menyeimbangkan bagian akhir dokumen dengan dua kolom.
+\usepackage{balance}
 
-% Digunakan untuk memperbaiki tipografi seperti font kerning.
-% Untuk informasi lebih lanjut, lihat https://ctan.org/pkg/microtype.
-\RequirePackage[final,expansion=alltext,protrusion=alltext-nott]{microtype}
+% Digunakan untuk menampilkan pustaka.
+\usepackage[square,comma,numbers,sort&compress]{natbib}
 
-%tweak \url{...}
-\usepackage{url}
-%\urlstyle{same}
-%improve wrapping of URLs - hint by http://tex.stackexchange.com/a/10419/9075
-\makeatletter
-\g@addto@macro{\UrlBreaks}{\UrlOrds}
-\makeatother
-%nicer // - solution by http://tex.stackexchange.com/a/98470/9075
-%DO NOT ACTIVATE -> prevents line breaks
-%\makeatletter
-%\def\Url@twoslashes{\mathchar`\/\@ifnextchar/{\kern-.2em}{}}
-%\g@addto@macro\UrlSpecials{\do\/{\Url@twoslashes}}
-%\makeatother
-
-% Diagonal lines in a table - http://tex.stackexchange.com/questions/17745/diagonal-lines-in-table-cell
-% Slashbox is not available in texlive (due to licensing) and also gives bad results. This, we use diagbox
-%\usepackage{diagbox}
-
-\usepackage{booktabs}
-
-% Required for package pdfcomment later
-\usepackage{xcolor}
-
-% For listings
-\usepackage{listings}
-\lstset{%
-  basicstyle=\ttfamily,%
-  columns=fixed,%
-  basewidth=.5em,%
-  xleftmargin=0.5cm,%
-  captionpos=b}%
-
-% Enable nice comments
-\usepackage{pdfcomment}
-%
-\newcommand{\commentontext}[2]{\colorbox{yellow!60}{#1}\pdfcomment[color={0.234 0.867 0.211},hoffset=-6pt,voffset=10pt,opacity=0.5]{#2}}
-\newcommand{\commentatside}[1]{\pdfcomment[color={0.045 0.278 0.643},icon=Note]{#1}}
-%
-% Compatibility with packages todo, easy-todo, todonotes
-\newcommand{\todo}[1]{\commentatside{#1}}
-% Compatiblity with package fixmetodonotes
-\newcommand{\TODO}[1]{\commentatside{#1}}
-
-% Bibliopgraphy enhancements
-%  - enable \cite[prenote][]{ref}
-%  - enable \cite{ref1,ref2}
-% Alternative: \usepackage{cite}, which enables \cite{ref1, ref2} only (otherwise: Error message: "White space in argument")
-%
-% Doc: http://texdoc.net/natbib
-\ifCLASSOPTIONcompsoc
-  % IEEE Computer Society needs nocompress option at cite.sty
-  % natbib includes the same functionality
-  \usepackage[%
-    square,        % for square brackets
-    comma,         % use commas as separators
-    numbers,       % for numerical citations;
-    sort           % orders multiple citations into the sequence in which they appear in the list of references;
-    %sort&compress % as sort but in addition multiple numerical citations
-                   % are compressed if possible (as 3-6, 15);
-  ]{natbib}
-\else
-  % normal IEEE
-  \usepackage[%
-    square,        % for square brackets
-    comma,         % use commas as separators
-    numbers,       % for numerical citations;
-    %sort           % orders multiple citations into the sequence in which they appear in the list of references;
-    sort&compress % as sort but in addition multiple numerical citations
-                   % are compressed if possible (as 3-6, 15);
-  ]{natbib}
-\fi
-% Same fontsize as without natbib
+% Mengubah format ukuran teks pada natbib.
 \renewcommand{\bibfont}{\normalfont\footnotesize}
-% Enable hyperlinked author names in the case of \citet
-% Source: https://tex.stackexchange.com/a/76075/9075
+
+% Menambah nama penulis ketika menggunakan perintah \citet.
+% Untuk informasi lebih lanjut, lihat https://tex.stackexchange.com/a/76075/9075.
 \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\NAT@test}{\else \NAT@nm}{\else \NAT@hyper@{\NAT@nm}}{}{}
 \makeatother
 
-% Enable that parameters of \cref{}, \ref{}, \cite{}, ... are linked so that a reader can click on the number an jump to the target in the document
+% Digunakan untuk menambah hyperlink pada referensi.
 \usepackage{hyperref}
-% Enable hyperref without colors and without bookmarks
+
+% Menonaktifkan warna dan bookmark pada hyperref.
 \hypersetup{hidelinks,
   colorlinks=true,
   allcolors=black,
   pdfstartview=Fit,
-  breaklinks=true}
-%
-% Enable correct jumping to figures when referencing
+  breaklinks=true
+}
+
+% Digunakan untuk membenarkan hyperref pada gambar.
 \usepackage[all]{hypcap}
 
-%enable \cref{...} and \Cref{...} instead of \ref: Type of reference included in the link
-\usepackage[capitalise,nameinlink]{cleveref}
-\crefname{lstlisting}{\lstlistingname}{\lstlistingname}
-\Crefname{lstlisting}{Listing}{Listings}
-
-%Following definitions are outside of IfPackageLoaded; inside, they are not visible
-%
-%Intermediate solution for hyperlinked refs. See https://tex.stackexchange.com/q/132420/9075 for more information.
-\newcommand{\Vlabel}[1]{\label[line]{#1}\hypertarget{#1}{}}
-\newcommand{\lref}[1]{\hyperlink{#1}{\FancyVerbLineautorefname~\ref*{#1}}}
-
-\newenvironment{listing}[1][htbp!]{\begin{figure}[#1]}{\end{figure}}
-\newcounter{listing}
-
-\usepackage{xspace}
-%\newcommand{\eg}{e.\,g.\xspace}
-%\newcommand{\ie}{i.\,e.\xspace}
-\newcommand{\eg}{e.\,g.,\ }
-\newcommand{\ie}{i.\,e.,\ }
-
-%introduce \powerset - hint by http://matheplanet.com/matheplanet/nuke/html/viewtopic.php?topic=136492&post_id=997377
-\DeclareFontFamily{U}{MnSymbolC}{}
-\DeclareSymbolFont{MnSyC}{U}{MnSymbolC}{m}{n}
-\DeclareFontShape{U}{MnSymbolC}{m}{n}{
-  <-6>    MnSymbolC5
-  <6-7>   MnSymbolC6
-  <7-8>   MnSymbolC7
-  <8-9>   MnSymbolC8
-  <9-10>  MnSymbolC9
-  <10-12> MnSymbolC10
-  <12->   MnSymbolC12%
-}{}
-\DeclareMathSymbol{\powerset}{\mathord}{MnSyC}{180}
-
-% *** SUBFIGURE PACKAGES ***
-\ifCLASSOPTIONcompsoc
-  \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
-\else
-  \usepackage[caption=false,font=footnotesize]{subfig}
-\fi
+% Digunakan untuk menampilkan beberapa gambar
+\usepackage[caption=false,font=footnotesize]{subfig}
 
 \usepackage{stfloats}
 
-% correct bad hyphenation here
-\hyphenation{op-tical net-works semi-conduc-tor}
+% Tambahkan format tanda hubung yang benar di sini
+\hyphenation{
+  ro-ket
+  me-ngem-bang-kan
+  per-hi-tu-ngan
+}
 
 \begin{document}
 
