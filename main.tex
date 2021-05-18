@@ -175,71 +175,22 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
-%\IEEEoverridecommandlockouts
 
-\input{deskripsi/judul.tex}
+  \input{deskripsi/judul.tex}
+  \input{deskripsi/abstrak.tex}
 
-% In case you want to add a copyright statement.
-%
-% Source: https://tex.stackexchange.com/a/200330/9075
-%
-% All possible solutions:
-%  - https://tex.stackexchange.com/a/325013/9075
-%  - https://tex.stackexchange.com/a/279134/9075
-%  - https://tex.stackexchange.com/q/279789/9075 (TikZ)
-%  - https://tex.stackexchange.com/a/200330/9075 - for non-compsocc papers
-\iffalse
-    \makeatletter
-    \def\ps@IEEEtitlepagestyle{%
-      \def\@oddfoot{\mycopyrightnotice}%
-      \def\@evenfoot{}%
-    }
-    \makeatother
-    \def\mycopyrightnotice{%
-      \begin{minipage}{\textwidth}
-        \footnotesize
-        1551-3203 \copyright 2015 IEEE.
-        Personal use is permitted, but republication/redistribution requires IEEE permission.
-        \\
-        See \url{https://www.ieee.org/publications_standards/publications/rights/index.html} for more information.
-      \end{minipage}
-      \gdef\mycopyrightnotice{}% just in case
-    }
-\fi
+  % Ubah bagian berikut sesuai dengan konten-konten yang akan dimasukkan pada dokumen
+  \input{konten/1-latar-belakang.tex}
+  \input{konten/2-penelitian-terkait.tex}
+  \input{konten/3-desain-implementasi.tex}
+  \input{konten/4-lorem-ipsum.tex}
+  \input{konten/5-kesimpulan.tex}
 
-\input{deskripsi/abstrak.tex}
+  % Menampilkan daftar pustaka dengan format IEEE
+  \bibliographystyle{IEEEtranN}
+  \bibliography{pustaka/pustaka.bib}
 
-% For peer review papers, you can put extra information on the cover
-% page as needed:
-% \ifCLASSOPTIONpeerreview
-% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
-% \fi
-%
-% For peerreview papers, this IEEEtran command inserts a page break and
-% creates the second title. It will be ignored for other modes.
-\IEEEpeerreviewmaketitle
-
-\input{konten/1-latar-belakang.tex}
-\input{konten/2-penelitian-terkait.tex}
-\input{konten/3-desain-implementasi.tex}
-\input{konten/4-lorem-ipsum.tex}
-\input{konten/5-kesimpulan.tex}
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% Enable to reduce spacing between bibitems (source: https://tex.stackexchange.com/a/25774)
-% \def\IEEEbibitemsep{0pt plus .5pt}
-
-\bibliographystyle{IEEEtranN} % IEEEtranN is the natbib compatible bst file
-% argument is your BibTeX string definitions and bibliography database(s)
-\bibliography{pustaka/pustaka.bib}
-
-\balance
+  % Menyeimbangkan bagian akhir di kedua kolom
+  \balance
 
 \end{document}
