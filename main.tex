@@ -55,6 +55,10 @@
 \patchcmd{\NAT@test}{\else \NAT@nm}{\else \NAT@hyper@{\NAT@nm}}{}{}
 \makeatother
 
+% Digunakan untuk melakukan linewrap pada pustaka dengan url yang panjang
+% jika terdapat hyphens
+\usepackage[hyphens]{url}
+
 % Digunakan untuk menambah hyperlink pada referensi.
 \usepackage{hyperref}
 
