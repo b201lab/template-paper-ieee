@@ -15,7 +15,7 @@ jobs:
         with:
           root_file: main.tex
       - name: Save result
-        uses: actions/upload-artifact@v2.2.3
+        uses: actions/upload-artifact@v3
         with:
           name: document
           path: main.pdf
