@@ -4,7 +4,7 @@
 [![commits since latest version](https://img.shields.io/github/commits-since/b201lab/template-paper-ieee/latest)](https://github.com/b201lab/template-paper-ieee/commits/master)
 [![repo size](https://img.shields.io/github/repo-size/b201lab/template-paper-ieee)](https://github.com/b201lab/template-paper-ieee)
 [![license](https://img.shields.io/github/license/b201lab/template-paper-ieee)](./LICENSE)
-[![build document status](https://img.shields.io/github/workflow/status/b201lab/template-paper-ieee/Build%20Document)](https://github.com/b201lab/template-paper-ieee/actions)
+[![build status](https://img.shields.io/github/actions/workflow/status/b201lab/template-paper-ieee/build.yml?branch=main)](https://github.com/b201lab/template-paper-ieee/actions)
 
 Repositori ini berisi template [LaTeX](https://www.latex-project.org/) dari paper untuk konferensi yang diselenggarakan oleh [Institute of Electrical and Electronics Engineers](https://www.ieee.org/) (IEEE).
 Template yang ada pada repositori ini menggunakan format resmi [IEEETran](http://www.michaelshell.org/tex/ieeetran/) versi 1.8b yang dikeluarkan oleh IEEE.
